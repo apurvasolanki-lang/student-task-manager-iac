@@ -42,7 +42,6 @@ jobs:
         run: terraform plan -input=false
 
       - name: Terraform Apply
-        if: github.event_name == 'workflow_dispatch'
         env:
           TF_VAR_cloudflare_api_token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           TF_VAR_cloudflare_account_id: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
